@@ -15,8 +15,8 @@ public class Day1 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(sumTo2020(list));
-		System.out.println(sumTo2020Again(list));
+		System.out.println("Day 1, Part 1: " + sumTo2020(list)); // first part of challenge
+		System.out.println("Day 1, Part 2: " + sumTo2020Again(list)); // second part of challenge
 	}
 	
 	public int sumTo2020(ArrayList<Integer> nums) {
