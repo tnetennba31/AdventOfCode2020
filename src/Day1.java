@@ -19,7 +19,7 @@ public class Day1 {
 		System.out.println(sumTo2020Again(list));
 	}
 	
-	public static int sumTo2020(ArrayList<Integer> nums) {
+	public int sumTo2020(ArrayList<Integer> nums) {
 		int winner = 0;
 		for (int x : nums) {
 			int diff = 2020 - x;
@@ -30,7 +30,7 @@ public class Day1 {
 		return winner;
 	}
 	
-	public static int sumTo2020Again(ArrayList<Integer> nums) {
+	public int sumTo2020Again(ArrayList<Integer> nums) {
 		int winner = 0;
 		for (int x : nums) {
 			for (int y : nums) {
