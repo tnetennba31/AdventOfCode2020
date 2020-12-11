@@ -7,5 +7,6 @@ public class runner {
 		new Day2(new File("src/input/day2.txt"));
 		new Day3(new File("src/input/day3.txt"));
 		new Day4(new File("src/input/day4.txt"));
+		new Day5(new File("src/input/day5.txt"));
 	}
 }
