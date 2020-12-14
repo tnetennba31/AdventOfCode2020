@@ -18,6 +18,7 @@ public class Day7 {
 				if (canContainGold(bag, rules)) total++;
 			}
 			System.out.println("Day 7, Part 1: " + total);	// first part of challenge
+			System.out.println("Day 7, Part 2: " + numBagsContained("shiny gold", rules));	// second part of challenge
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -41,5 +42,21 @@ public class Day7 {
 			}
 		}
 		return canContainGold;
+	}
+	
+	public int numBagsContained(String bag, HashMap<String, String> rules) {
+		int numBagsContained = 0;
+		String currentContents = rules.get(bag);
+		if (currentContents.equals("no other bags.")) {	// contains nothing else
+			return numBagsContained;
+		} else {	// recursively count contained bags
+			String[] newContents = currentContents.split((", "));
+			for (int i = 0; i < newContents.length; i++) {
+				int numBags = Integer.parseInt(newContents[i].substring(0, 1));
+				newContents[i] = newContents[i].substring(2, newContents[i].indexOf("bag")).strip();
+				numBagsContained += numBags + (numBags * numBagsContained(newContents[i], rules));
+			}
+		}
+		return numBagsContained;
 	}
 }
